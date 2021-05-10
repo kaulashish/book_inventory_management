@@ -27,7 +27,7 @@ the search query would match the first couple results.
 
 - Add a new store by clicking on the 'New Store' Button. Choose a name for your store and click 'Submit' or hit enter.
 
-- You will be redirected by to the home page and your store will be listed under 'Your Stores'
+- You will be redirected back to the home page and your store will be listed under 'Your Stores'
 
 - Click on your store. Now to add books, click on 'Search books to add to inventory'.
 
