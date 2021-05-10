@@ -1,0 +1,22 @@
+<body>
+    <center>
+    {% if request.user.is_authenticated %}
+        <h2>Welcome <i>{{request.user}}</i>!</h2>
+        <a href="{% url "logout" %}"><button>Logout</button></a>
+    {% else %}
+        <h2>Books Inventory Manager</h2>
+        <p>Please <a href="{% url "login" %}">Login</a> to continue.</p>
+    {% endif %}
+
+    <h2>Your Stores: </h2>
+    <ul>
+        {% for store in stores %}
+        <h3><li><a href="{% url 'store-view' pk=store.id %}">{{store.name}}</a></li></h3>
+        {% empty %}
+        <h4><i>You do not have any stores created yet.</i></h4>
+        {% endfor %}    
+    </ul>
+    <br>
+    <a href="{% url 'addstore' %}"><button>New Store</button></a>
+    </center>
+</body>

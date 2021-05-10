@@ -1,0 +1,19 @@
+<body>
+<center>
+    <h2>{{book_info.volumeInfo.title}}</h2>
+    <img src="{{book_info.volumeInfo.imageLinks.thumbnail}}" alt=""><br><br>
+    <a href="{% url 'book-add' %}?q={{book_info.id}}&storeid={{store_id}}"><button>Add to Inventory {{error_txt}}</button></a>
+    {{count_html|safe}} <!-- 'safe' renders var as html -->
+    <p><b>Author: </b>{{book_info.volumeInfo.authors|join:', '}}</p>
+    <p><b>Publisher: </b>{{book_info.volumeInfo.publisher}}</p>    
+    <p><b>Published Date: </b>{{book_info.volumeInfo.publishedDate}}</p>    
+    <p><b>Pages: </b>{{book_info.volumeInfo.pageCount}}</p> 
+    <p><b>Google Books ID: </b>{{book_info.id}}</p>  
+    <p><b>ISBN10: </b>{{book_info.volumeInfo.industryIdentifiers.0.identifier}}</p>  
+    <p><b>ISBN13: </b>{{book_info.volumeInfo.industryIdentifiers.1.identifier}}</p>  
+    <p><h3>Description: </h3>{{book_info.volumeInfo.description|safe}}</p> 
+    
+    <br><br><br>
+    <a href="{% url 'homepage' %}"><button>Back to Home</button></a>
+</center>    
+</body>

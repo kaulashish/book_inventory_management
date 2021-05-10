@@ -1,0 +1,10 @@
+<body>
+<center>
+    <h3>Update Inventory</h3>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Update">
+    </form>
+</center>
+</body>

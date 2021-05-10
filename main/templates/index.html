@@ -1,0 +1,27 @@
+<body>
+<center>
+    <h2>Search Books -></h2>
+    <form method="POST" action="">
+        {%csrf_token%}
+        {{form.as_p}}
+        <input type="submit", value="Submit"> 
+    </form> 
+
+    
+    <content id="search-container">
+        <div class="search-item">
+            {% for book in books %}
+                <a href="{% url 'book-info' %}?q={{book.id}}&storeid={{store_id}}"> <!-- for multiple url parameters, separate them with '&' -->
+                    <h4>{{book.volumeInfo.title}} by {{book.volumeInfo.authors.0}}</h4>
+                    <img src="{{book.volumeInfo.imageLinks.thumbnail}}" alt="">
+                </a>
+                <br>
+            {% endfor %}     
+        </div>
+    </content>
+
+    <div>
+
+    </div>
+</center>    
+</body>

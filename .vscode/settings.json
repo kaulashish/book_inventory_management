@@ -1,0 +1,4 @@
+{
+    "python.pythonPath": "c:\\myenv\\django\\Scripts\\python.exe",
+    "python.formatting.provider": "black"
+}

@@ -1,0 +1,21 @@
+<body>
+<center>
+    <h2><u>{{store.name}}</u></h2>
+    <a href="{% url 'home' pk=store.id %}?storeid={{store.id}}"><button>Search books to add to inventory</button></a>
+    <h3>Books Inventory</h3>  
+    {% for item in store_inventory %}
+        <ul>
+            <li>
+                <a href="{% url 'book-info' %}?q={{item.google_id}}&id={{item.id}}">{{item.book}}</a> <b>Count: </b>{{item.count}}
+                <a href="{% url 'edit-inventory-item' pk=item.id %}?storeid={{store.id}}"><button>Edit</button></a>
+                <a href="{% url 'delete-inventory-item' pk=item.id %}?storeid={{store.id}}"><button>Delete</button></a>  
+            </li>
+        </ul>
+    {% empty %}
+        <h4><i>No Books in inventory! Add a book to show something.</i></h4>
+    {% endfor %}
+
+    <br><br><br>
+    <a href="{% url 'homepage' %}"><button>Back to Home</button></a>
+</center>
+</body>
