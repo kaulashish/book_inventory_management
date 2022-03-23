@@ -2,8 +2,6 @@
 
 A Django Web Application where a user can create multiple stores and add books to their respective stores.
 
-*This project is an assignment for [Gloify](https://gloify.com/)*
-
 ## Implementation
 
 - The whole project was implemented using Class Based Views which is always my priority choice as it looks a lot cleaner
